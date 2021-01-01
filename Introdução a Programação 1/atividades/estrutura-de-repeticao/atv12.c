@@ -12,9 +12,6 @@ int main() {
             printf("Jogador 1, eh necessario que os caracteres sejam distintos\n");
         }
     } while ((c1 == c2) || (c1 == c3) || (c2 == c3));
-    
-    
-
 
     for (int i = 0; i < 15; i++) {
         char c;
@@ -52,8 +49,6 @@ int main() {
     } else {
         printf("Infelizmente voce nao ganhou o jogo\n");
     }
-    
-    
     
     printf("fim");
 
