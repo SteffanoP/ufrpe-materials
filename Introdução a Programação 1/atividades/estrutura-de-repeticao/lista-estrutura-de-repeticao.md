@@ -103,14 +103,14 @@ Crie um jogo de adivinhação que deve ser jogado entre dois usuários. O primei
 
 ## 13
 
-Usando apenas os comandos printf("0"), printf("*") e printf("\n") e usando laços aninhados, faça o seguinte aparecer na tela.
+Usando apenas os comandos `printf("0")`, `printf("X")` e `printf("\n")` e usando laços aninhados, faça o seguinte aparecer na tela.
 
-xxxxx
-0xxxx
-00xxx
-000xx
-0000x
-00000
+- xxxxx
+- 0xxxx
+- 00xxx
+- 000xx
+- 0000x
+- 00000
 
 ## 14
 
