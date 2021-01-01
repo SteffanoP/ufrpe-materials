@@ -1,7 +1,8 @@
+/* Vetores unidimensionais foram usados para essa solução, assunto que só foi visto posteriormente */
 #include <stdio.h>
 
 int main(int argc, char const *argv[]) {
-    int votos[5], total_votos, candidato_ganhador;
+    int votos[5], total_votos, candidato_ganhador; //vetor unidimensional
 
     for (int i = 0; i <= 5; i++) {
         votos[i] = 0;

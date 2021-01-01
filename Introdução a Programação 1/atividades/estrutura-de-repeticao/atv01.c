@@ -1,8 +1,9 @@
 /* Faça um programa que leia 10 números inteiros (positivos ou negativos). Imprima a média dos valores, ignorando os não positivos.*/
+/* Vetores unidimensionais foram usados para essa solução, assunto que só foi visto posteriormente */
 #include <stdio.h>
 
 int main(int argc, char const *argv[]) {
-    int num[10];
+    int num[10]; //Uso de vetor unidimensional*
     float soma, qtd_medias = 0, media;
 
     printf("Digite os numeros\n");

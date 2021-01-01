@@ -1,10 +1,11 @@
+/* Vetores unidimensionais foram usados para essa solução, assunto que só foi visto posteriormente */
 #include <stdio.h>
 #include <float.h>
 
 int main(int argc, char const *argv[]) {
     int contador_numero = 0, qtd_numeros;
     float i;
-    float numero[100];
+    float numero[100]; //Vetor Unidimensional
     float soma_numeros, media_numeros, maior_numero = 0, menor_numero = FLT_MAX, media_pares, soma_pares, qtd_pares;
 
     do  {
