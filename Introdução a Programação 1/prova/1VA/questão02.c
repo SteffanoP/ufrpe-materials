@@ -90,7 +90,7 @@ int main()
             pos_linha = rand() % (TAM_MAX_TABULEIRO - 1);
             pos_coluna = rand() % (TAM_MAX_TABULEIRO - 1) + 1;
 
-        } while (((area_inimiga_2[pos_linha][pos_coluna] < 1) || (area_inimiga_2[pos_linha + 1][pos_coluna] < 1)) && (area_inimiga_2[pos_linha][pos_coluna] != 0));
+        } while (!(((area_inimiga_2[pos_linha][pos_coluna] <= 1) || (area_inimiga_2[pos_linha + 1][pos_coluna] <= 1)) && ((area_inimiga_2[pos_linha][pos_coluna] != 0) || (area_inimiga_2[pos_linha + 1][pos_coluna] != 0))));
         area_inimiga_2[pos_linha][pos_coluna] = 2;
         area_inimiga_2[pos_linha + 1][pos_coluna] = 2;
     }
@@ -106,7 +106,7 @@ int main()
             pos_linha += 1;
             pos_coluna = rand() % (TAM_MAX_TABULEIRO - 1);
 
-        } while (((area_inimiga_2[pos_linha][pos_coluna] < 2) || (area_inimiga_2[pos_linha - 1][pos_coluna + 1] < 2)) && (area_inimiga_2[pos_linha][pos_coluna] != 0));
+        } while (((area_inimiga_2[pos_linha][pos_coluna] <= 2) || (area_inimiga_2[pos_linha - 1][pos_coluna + 1] <= 2)) && ((area_inimiga_2[pos_linha][pos_coluna] != 0) || (area_inimiga_2[pos_linha - 1][pos_coluna + 1] != 0)));
         area_inimiga_2[pos_linha][pos_coluna] = 3;
         area_inimiga_2[pos_linha - 1][pos_coluna + 1] = 3;
     }
@@ -121,7 +121,7 @@ int main()
             pos_linha = rand() % (TAM_MAX_TABULEIRO - 1);
             pos_coluna = rand() % (TAM_MAX_TABULEIRO - 1);
 
-        } while (((area_inimiga_2[pos_linha][pos_coluna] < 3) || (area_inimiga_2[pos_linha + 1][pos_coluna + 1] < 3)) && (area_inimiga_2[pos_linha][pos_coluna] != 0));
+        } while (((area_inimiga_2[pos_linha][pos_coluna] <= 3) || (area_inimiga_2[pos_linha + 1][pos_coluna + 1] <= 3)) && ((area_inimiga_2[pos_linha][pos_coluna] != 0) || (area_inimiga_2[pos_linha + 1][pos_coluna + 1] != 0)));
         area_inimiga_2[pos_linha][pos_coluna] = 4;
         area_inimiga_2[pos_linha + 1][pos_coluna + 1] = 4;
     }
@@ -187,7 +187,7 @@ int main()
             pos_linha = rand() % (TAM_MAX_TABULEIRO - 1);
             pos_coluna = rand() % (TAM_MAX_TABULEIRO - 1) + 1;
 
-        } while (((area_inimiga_1[pos_linha][pos_coluna] < 1) || (area_inimiga_1[pos_linha + 1][pos_coluna] < 1)) && (area_inimiga_1[pos_linha][pos_coluna] != 0));
+        } while ((((area_inimiga_1[pos_linha][pos_coluna] <= 3) || (area_inimiga_1[pos_linha + 1][pos_coluna] <= 3)) && ((area_inimiga_1[pos_linha][pos_coluna] != 0) || (area_inimiga_1[pos_linha + 1][pos_coluna] != 0))));
         area_inimiga_1[pos_linha][pos_coluna] = 2;
         area_inimiga_1[pos_linha + 1][pos_coluna] = 2;
     }
@@ -203,7 +203,7 @@ int main()
             pos_linha += 1;
             pos_coluna = rand() % (TAM_MAX_TABULEIRO - 1);
 
-        } while (((area_inimiga_1[pos_linha][pos_coluna] < 2) || (area_inimiga_1[pos_linha - 1][pos_coluna + 1] < 2)) && (area_inimiga_1[pos_linha][pos_coluna] != 0));
+        } while ((((area_inimiga_1[pos_linha][pos_coluna] <= 3) || (area_inimiga_1[pos_linha - 1][pos_coluna + 1] <= 3)) && ((area_inimiga_1[pos_linha][pos_coluna] != 0) || (area_inimiga_1[pos_linha - 1][pos_coluna + 1] != 0))));
         area_inimiga_1[pos_linha][pos_coluna] = 3;
         area_inimiga_1[pos_linha - 1][pos_coluna + 1] = 3;
     }
@@ -218,7 +218,7 @@ int main()
             pos_linha = rand() % (TAM_MAX_TABULEIRO - 1);
             pos_coluna = rand() % (TAM_MAX_TABULEIRO - 1);
 
-        } while (((area_inimiga_1[pos_linha][pos_coluna] < 3) || (area_inimiga_1[pos_linha + 1][pos_coluna + 1] < 3)) && (area_inimiga_1[pos_linha][pos_coluna] != 0));
+        } while ((((area_inimiga_1[pos_linha][pos_coluna] <= 3) || (area_inimiga_1[pos_linha + 1][pos_coluna + 1] <= 3)) && ((area_inimiga_1[pos_linha][pos_coluna] != 0) || (area_inimiga_1[pos_linha + 1][pos_coluna + 1] != 0))));
         area_inimiga_1[pos_linha][pos_coluna] = 4;
         area_inimiga_1[pos_linha + 1][pos_coluna + 1] = 4;
     }
