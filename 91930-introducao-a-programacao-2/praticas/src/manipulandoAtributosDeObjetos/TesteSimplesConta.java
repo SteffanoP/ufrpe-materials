@@ -1,13 +1,14 @@
+package manipulandoAtributosDeObjetos;
 
 public class TesteSimplesConta {
 	public static void main(String[] args) {
 		Conta minhaConta = new Conta();
 		Conta minhaContaComAtributosIniciais = new Conta("123-4", 100.50);
 		
-		//minhaConta.numero = ""; //É um attribute private da Conta.java
+		//minhaConta.numero = ""; //ï¿½ um attribute private da metodotoString.manipulandoAtributosDeObjetos.Conta.java
 		minhaConta.getNumero();
 		
-		//minhaConta.saldo = 500000; //É um attribute private da Conta.java
+		//minhaConta.saldo = 500000; //ï¿½ um attribute private da metodotoString.manipulandoAtributosDeObjetos.Conta.java
 		minhaConta.creditar(500000);
 		
 		System.out.println(minhaConta.getNumero());
@@ -20,7 +21,7 @@ public class TesteSimplesConta {
 		minhaContaComAtributosIniciais.debitar(50);
 		System.out.println(minhaContaComAtributosIniciais.getSaldo());
 		
-		//Testa condição de débito
+		//Testa condiï¿½ï¿½o de dï¿½bito
 		minhaContaComAtributosIniciais.debitar(100);
 	}
 }
