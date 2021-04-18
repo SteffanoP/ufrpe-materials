@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>montandoClassesDeDiagramaUML</OriginalElement>
+  <nodes>
+    <node x="-167.5" y="111.0">montandoClassesDeDiagramaUML.Proprietario</node>
+    <node x="115.0" y="-10.0">montandoClassesDeDiagramaUML.Carro</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="montandoClassesDeDiagramaUML.Carro" target="montandoClassesDeDiagramaUML.Proprietario" relationship="DEPENDENCY">
+      <point x="62.25" y="-204.5" />
+      <point x="301.75" y="192.0" />
+      <point x="-46.0" y="192.0" />
+      <point x="40.5" y="83.5" />
+    </edge>
+    <edge source="montandoClassesDeDiagramaUML.Carro" target="montandoClassesDeDiagramaUML.Proprietario" relationship="TO_ONE">
+      <point x="-62.25" y="-204.5" />
+      <point x="177.25" y="192.0" />
+      <point x="-127.0" y="192.0" />
+      <point x="-40.5" y="83.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="true" x="98.0" y="194.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
