@@ -1,3 +1,6 @@
 [submodule "96829-introducao-a-programacao-1/prova/2VA/projeto-banana"]
 	path = 96829-introducao-a-programacao-1/prova/2VA/projeto-banana
 	url = https://github.com/SteffanoP/projeto-banana.git
+[submodule "91930-introducao-a-programacao-2/projeto/projeto-pacovan"]
+	path = 91930-introducao-a-programacao-2/projeto/projeto-pacovan
+	url = https://github.com/SteffanoP/projeto-pacovan
