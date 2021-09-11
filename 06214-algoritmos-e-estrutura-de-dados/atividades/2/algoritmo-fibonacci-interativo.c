@@ -24,6 +24,24 @@ unsigned long fib(int n)
     return numero_fibonacci;
 }
 
+/**
+ * A função fib calcula o número da ordem de fibonacci do qual você deseja
+ * descobrir. O algoritmo funciona num formato iterativo, do qual a função
+ * é iterada por um loop, nesse caso um for, que se inicia desde o primeiro
+ * valor da sequência e vai somando seu anterior com o próximo número até
+ * chegar na ordem requisitado.
+ * 
+ * Para essa aplicação específica estamos calculando o Número de Operações
+ * (aka Number of Operations,NoP); logo a função coleta o endereço de um vetor
+ * para que a mesma não fique dependente de uma variável global apenas para
+ * essa operação.
+ * 
+ * @param n corresponde a ordem do número na sequência de fibonacci, a primeira
+ * ordem é n = 0.
+ * @param *nop corresponde ao ponteiro da variável NOP que irá armazenar o
+ * número de operações.
+ * @return O valor da sequência de fibonacci.
+ **/
 unsigned long fib_nop(int n, unsigned long *nop)
 {
     int numero_anterior = -1, numero_atual = 1, numero_fibonacci;
