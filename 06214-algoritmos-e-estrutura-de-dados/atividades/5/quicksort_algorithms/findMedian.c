@@ -1,4 +1,3 @@
-//Link for this challenge: https://www.hackerrank.com/challenges/find-the-median/
 #include <assert.h>
 #include <ctype.h>
 #include <limits.h>
@@ -24,37 +23,26 @@ int parse_int(char *);
  * The function accepts INTEGER_ARRAY arr as parameter.
  */
 
-int findMedian(int arr_count, int *arr)
+int *quickSort(int arr_count, int *arr)
 {
-    int *a = quickSort(arr_count, arr);
-    for (int i = 0; i < arr_count; i++)
-    {
-        printf("%d ", a[i]);
-    }
-    return -1;
-}
-
-int *quickSort(int arr_count, int *arr, int *result_count)
-{
-    *result_count = arr_count;
-
+    //This condition is not necessary, but we get our
+    //result faster than doing a new quicksort
     if (arr_count == 2)
     {
         if (arr[0] < arr[1])
-        {
-            return arr = {arr[0], arr[1]};
-        }
+            return arr;
         else
         {
-            return arr = {arr[1], arr[0]};
+            int b = arr[0];
+            arr[0] = arr[1];
+            arr[1] = b;
+            return arr;
         }
     }
 
     int *left = malloc(arr_count * sizeof(int));
     int *equal = malloc(arr_count * sizeof(int));
     int *right = malloc(arr_count * sizeof(int));
-
-    
 
     //Storing the pivot
     int pivot = arr[0];
@@ -71,9 +59,11 @@ int *quickSort(int arr_count, int *arr, int *result_count)
             right[index_right++] = arr[i];
     }
 
-    //Let's quicksort the left and the right
-    *left = quickSort(index_left, left, &index_left);
-    *right = quickSort(index_right, right, &index_right);
+    if (index_left > 1)
+        left = quickSort(index_left, left);
+
+    if (index_right > 1)
+        right = quickSort(index_right, right);
 
     //Group all together
     int *a = malloc(arr_count * sizeof(int));
@@ -87,6 +77,13 @@ int *quickSort(int arr_count, int *arr, int *result_count)
     free(right);
 
     return a;
+}
+
+int findMedian(int arr_count, int *arr)
+{
+    int result_count;
+    int *a = quickSort(arr_count, arr);
+    return (arr_count % 2) == 1 ? a[arr_count / 2] : ((a[arr_count / 2] + a[(arr_count / 2) + 1]) / 2);
 }
 
 int main()
