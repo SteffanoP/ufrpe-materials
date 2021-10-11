@@ -17,32 +17,45 @@ veti criaveti(int);
 veti insertionSort(int n, int *);
 
 void mergeSort(int idx_i, int idx_f, int *);
+void mergeInsertionSort(int k, int idx_i, int idx_f, int *);
 void merge_veti(int idx_i_g1, int half_index, int idx_f_g2, int *);
 
-int NOP_MSORT, NOP_QSORT;
+int NOP_MSORT, NOP_ISORT;
 
 int main(int argc, char const *argv[])
 {
     int n, k, x = 42, r = 0;
-    veti v;
+    veti v, z;
 
     Randomize();
 
     FILE *saida;
     saida = fopen("dados.dat", "w");
-    fprintf(saida, "n\t\tNOP_QSORT\tNOP_MSORT\n");
+    fprintf(saida, "n\t\tNOP_ISORT\tNOP_MSORT\tNOP_MISORT\n");
 
     for (n = TAM_INI; n <= TAM_MAX; n += INC)
     {
         v = criaveti(n);
-        for (k = 0; k < n; k++)
+        z = criaveti(n);
+        for (k = 0; k < n; k++) {
             v[k] = RandomInteger(0, 100);
+            z[k] = RandomInteger(0, 100);
+        }
+
+        NOP_ISORT = 0;
+        insertionSort(n, v);
+        int NOP_ISORT_ONLY = NOP_ISORT;
 
         NOP_MSORT = 0;
-        insertionSort(n, v);
         mergeSort(0, n - 1, v);
+        int NOP_MSORT_ONLY = NOP_MSORT;
 
-        fprintf(saida, "%.4d\t%7d\t\t%5d \n", n, NOP_QSORT, NOP_MSORT);
+        NOP_ISORT = 0;
+        NOP_MSORT = 0;
+        mergeInsertionSort(20, 0, n - 1, z);
+        int NOP_MISORT = NOP_ISORT + NOP_MSORT;
+
+        fprintf(saida, "%.4d\t%7d\t\t%5d\t\t%5d \n", n, NOP_ISORT_ONLY, NOP_MSORT_ONLY, NOP_MISORT);
 
         free(v);
     }
@@ -64,6 +77,31 @@ void mergeSort(int idx_i, int idx_f, int v[])
         int half_index = idx_i + (idx_f - idx_i)/2;
         mergeSort(idx_i, half_index, v);
         mergeSort(half_index + 1, idx_f, v);
+        merge_veti(idx_i, half_index, idx_f, v);
+    }
+}
+
+void mergeInsertionSort(int k, int idx_i, int idx_f, int v[])
+{
+    int size_veti = (idx_f - idx_i) + 1;
+    if (k >= size_veti)
+    {
+        veti insertion_group = criaveti(size_veti);
+        for (int i = 0; i < size_veti; i++)
+            insertion_group[i] = v[idx_i + i];
+        
+        insertion_group = insertionSort(size_veti, insertion_group);
+
+        for (int i = 0; i < size_veti; i++)
+            v[idx_i + i] = insertion_group[i];
+
+        free(insertion_group);
+    }
+    else
+    {
+        int half_index = idx_i + (idx_f - idx_i) / 2;
+        mergeInsertionSort(k, idx_i, half_index, v);
+        mergeInsertionSort(k, half_index + 1, idx_f, v);
         merge_veti(idx_i, half_index, idx_f, v);
     }
 }
@@ -146,7 +184,6 @@ void merge_veti(int idx_i_g1, int half_index, int idx_f_g2, int v[])
  **/
 veti insertionSort(int n, int v[]) 
 {
-    NOP_QSORT = 0;
     for (int i = 1; i < n; i++)
     {
         int x = v[i]; //2
@@ -154,7 +191,7 @@ veti insertionSort(int n, int v[])
 
         while ((j >= 0) && (x < v[j]))
         {
-            NOP_QSORT++;
+            NOP_ISORT++;
             v[j + 1] = v[j];
             j = j - 1;
         }
