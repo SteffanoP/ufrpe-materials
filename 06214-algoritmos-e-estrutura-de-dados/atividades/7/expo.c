@@ -10,8 +10,8 @@
 
 int expo_recursivo(int k, int n) 
 {
-    if (n == 1)
-        return k;
+    if (n <= 1)
+        return n == 0 ? 1 : k;
     
     int resultado;
     if (n % 2 == 0)
@@ -26,14 +26,14 @@ int expo_recursivo(int k, int n)
 }
 
 int expo(int k, int n) {
-    int result = 1;
+    int resultado = 1;
     if (k != 0)
     {
         for (int i = 0; i < n; i++)
-            result *= k;
+            resultado *= k;
     }
     
-    return result;
+    return resultado;
 }
 
 int main()
