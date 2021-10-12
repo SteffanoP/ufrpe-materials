@@ -25,6 +25,17 @@ int expo_recursivo(int k, int n)
     return resultado;
 }
 
+int expo(int k, int n) {
+    int result = 1;
+    if (k != 0)
+    {
+        for (int i = 0; i < n; i++)
+            result *= k;
+    }
+    
+    return result;
+}
+
 int main()
 {
     printf("%d\n", expo_recursivo(5, 3));
