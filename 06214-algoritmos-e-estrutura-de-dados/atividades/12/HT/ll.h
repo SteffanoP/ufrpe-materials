@@ -2,9 +2,10 @@
 
 typedef struct reg celula;
 struct reg {
-   int     chave, v;
+   char*  chave;
+   int        v;
    celula *prox;
 };
 
-celula *insere (int, int, celula *);
-celula *busca (int, celula *);
+celula *insere (char*, int, celula *);
+celula *busca (char*, celula *);

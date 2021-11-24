@@ -2,15 +2,16 @@
 
 #include "ll.h"
 #include <stdlib.h>
+#include <string.h>
 
-// Esta função insere uma nova celula
-// no começo de uma lista encadeada. A nova celula
+// Esta funï¿½o insere uma nova celula
+// no comeï¿½o de uma lista encadeada. A nova celula
 // tem conteudo x e seu prox vale p (que pode
 // NULL.)
-// Devolve a célula recem criada.
+// Devolve a cï¿½lula recem criada.
 
 celula *
-insere (int ch, int v, celula *p)
+insere (char* ch, int v, celula *p)
 {
    celula *nova;
    nova = malloc (sizeof (celula));
@@ -21,17 +22,17 @@ insere (int ch, int v, celula *p)
 }
 
 
-// Esta função recebe um inteiro x e uma
+// Esta funï¿½o recebe um inteiro x e uma
 // lista encadeada le de inteiros e devolve
-// o endereço de uma celula cuja chave seja x.
-// Se tal celula não existe, devolve NULL.
+// o endereï¿½o de uma celula cuja chave seja x.
+// Se tal celula nï¿½o existe, devolve NULL.
 
 celula *
-busca (int x, celula *le)
+busca (char* x, celula *le)
 {
    celula *p;
    p = le;
-   while (p != NULL && p->chave != x)
+   while (p != NULL && strcmp(p->chave, x) != 0)
       p = p->prox;
    return p;
 }

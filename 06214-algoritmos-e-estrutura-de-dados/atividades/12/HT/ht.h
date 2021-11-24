@@ -8,8 +8,9 @@ struct ht_ {
     celula** V;
 };
 
-int hash(int, int);
+int hash(char*, int);
 HT *cria_ht(int);
-void put(HT *, int);
-int get(HT *, int);
+void put(HT *, char*);
+int get(HT *, char*);
 void printHT(HT *);
+void saveHT(HT *, char*, char*);
