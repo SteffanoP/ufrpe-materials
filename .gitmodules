@@ -4,3 +4,6 @@
 [submodule "91930-introducao-a-programacao-2/projeto/projeto-pacovan"]
 	path = 91930-introducao-a-programacao-2/projeto/projeto-pacovan
 	url = https://github.com/SteffanoP/projeto-pacovan
+[submodule "06243-estatistica-exploratoria-I"]
+	path = 06243-estatistica-exploratoria-I
+	url = https://github.com/SteffanoP/06243-estatistica-exploratoria-I.git
